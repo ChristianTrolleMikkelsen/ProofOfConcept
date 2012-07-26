@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <style type='text/css'>
+html, body { font-family:tahoma, sans-serif; }
+
+h2
+{
+  height:15px;
+  font-size:80%;
+}
+
+h2 a
+{
+  text-decoration: none;
+  color: #393939;
+}
+
+h2 a:hover
+{
+  text-decoration: underline;
+}
+
+.failed
+{
+  background-color:#EFC0C0;
+  color:#393939;
+  margin:5px 0 0 0;
+  padding:5px 5px 3px 5px;
+}
+
+.ok
+{
+  background-color:#C0EFC0;
+  color:#393939;
+  margin:5px 0 0 0;
+  padding:5px 5px 3px 5px;
+}
+
+.ignored
+{
+  background-color:#EFEFC0;
+  color:#393939;
+  margin:5px 0 0 0;
+  padding:5px 5px 3px 5px;
+}
+
+div.node {
+  border:1px solid #DCE2E8;
+  padding:5px 5px 3px 5px;
+}
+
+div.exception {
+  background-color:#E3E9EF;
+  white-space: pre;
+  color:#393939;
+  height:15px;
+  border-bottom:2px solid #DCE2E8;
+  font-family:monospace;
+  font-size:80%;
+  margin:0;
+  padding:5px 5px 3px 5px;
+}
+
+div.failMessage {
+  background-color:#EFC0C0;
+  white-space: pre;
+  color:#393939;
+  height:15px;
+  font-family:monospace;
+  font-size:80%;
+  margin:0;
+  padding:3px 5px 3px 5px;
+}
+
+div.ignoreMessage {
+  background-color:#EFEFC0;
+  white-space: pre;
+  color:#393939;
+  height:15px;
+  font-family:monospace;
+  font-size:80%;
+  margin:0;
+  padding:3px 5px 3px 5px;
+}
+
+div.stacktrace {
+  background-color:#F1F4F7;
+  white-space: pre;
+  overflow:auto;
+  color:#8B0000;
+  font-family:monospace;
+  font-size:80%;
+  margin:0 0 5px 0;
+  padding:8px 5px 8px 5px;
+}
+
+div.output {
+  white-space: pre;
+  overflow:auto;
+  font-family:monospace;
+  font-size:80%;
+  margin:0 0 5px 0;
+  padding:8px 5px 8px 5px;
+}
+    </style>
+    <style type="text/css"> 
+      .hoverLinkEmuLink {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      
+      .normalLinkEmuLink {
+      }
+    </style>
+    
+    <script language="javascript">
+      var linkPressedStatus = new Array();
+
+      function linkEmuMouseDown(e, obj) {
+        linkPressedStatus[obj.location] = true;
+        return true;
+      }
+      
+      function linkEmuMouseUp(e, obj) {
+        if (linkPressedStatus[obj.location]) {
+          linkPressedStatus[obj.location] = false;
+          window.location.href = obj.location;
+        }
+        
+        return true;
+      }
+      
+      function toggleLinkEmuStyle(obj, hover) {
+        obj.className = hover ? "hoverLinkEmuLink" : "normalLinkEmuLink";
+      }
+      
+      function linkEmuMouseEnter(e, obj) {
+        linkPressedStatus[obj.location] = false;
+        toggleLinkEmuStyle(obj, true);
+      }
+      
+      function linkEmuMouseMove(e, obj) {
+        linkPressedStatus[obj.location] = false;
+        toggleLinkEmuStyle(obj, true);
+      }
+      
+      function linkEmuMouseLeave(e, obj) {
+        linkPressedStatus[obj.location] = false;
+        toggleLinkEmuStyle(obj, false);
+      }
+    </script>
+    
+  </head>
+  <body>
+  
+  <h2 class="ok"> <a href="google.com">Test Passed</a></h2>
+  <h2 class="failed"> <a href="google.com">Test Failed</a></h2>
+  <h2 class="ignored"> <a href="google.com">Test Ignored</a></h2>
+
+  <h2 class="exception"> <a href="google.com">exception</a></h2>
+  <h2 class="failMessage"> <a href="google.com">failMessage</a></h2>
+  <h2 class="ignoreMessage"> <a href="google.com">ignoreMessage</a></h2>
+  <h2 class="stacktrace"> <a href="google.com">stacktrace</a></h2>
+  
+  
+  <div class="node">
+	<h2 class="ok"><a href="google.com">Test Passed</a></h2>
+	<div class="output">Given I have written a test
+When I run the test
+Then the test fails
+	</div>
+  </div>
+
+  <div class="node">
+	<h2 class="failed"> <a href="google.com">Test Failed</a></h2>
+	<div class="output">Given I have written a test
+When I run the test
+Then the test fails
+		<div class="node exception"><h2>Failing Test: System.Exception : Exception of type 'System.Exception' was thrown.</h2></div><div class="stacktrace">at Specifications.SpecFlowTest.ThenTheTestFails() in SpecFlowTest.cs: line 30
+at TechTalk.SpecFlow.Bindings.MethodBinding.InvokeAction(IContextManager contextManager, Object[] arguments, ITestTracer testTracer, ref TimeSpan duration)
+at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepArgs stepArgs)
+at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+at Specifications.StandardSpecificationFeature.ScenarioCleanup() in SpecFlowTest.feature.cs: line 0
+at Specifications.StandardSpecificationFeature.FailingTest() in SpecFlowTest.feature: line 15 
+			</div>
+		</div>
+    </div>
+  </div>
+  
+  <div class="node">
+	<h2  class="ignored"> <a href="google.com">Test Ignored</a></h2>
+	<div class="output">Given I have written a test
+When I run the test
+Then the test fails</div>
+  </div>
+  </body>
+</html>
