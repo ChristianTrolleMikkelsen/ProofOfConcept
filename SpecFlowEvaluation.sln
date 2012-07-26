@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowEvaluation", "SpecFlowEvaluation\SpecFlowEvaluation.csproj", "{41C7AC5D-C617-448A-B6BD-343A0408376C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specifications", "Specifications\Specifications.csproj", "{83D18152-25D3-4889-B49F-03789F766CE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41C7AC5D-C617-448A-B6BD-343A0408376C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C7AC5D-C617-448A-B6BD-343A0408376C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C7AC5D-C617-448A-B6BD-343A0408376C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C7AC5D-C617-448A-B6BD-343A0408376C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D18152-25D3-4889-B49F-03789F766CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D18152-25D3-4889-B49F-03789F766CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D18152-25D3-4889-B49F-03789F766CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D18152-25D3-4889-B49F-03789F766CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
